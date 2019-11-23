@@ -1,0 +1,37 @@
+name: Parse Deployment Event
+description: Parses GitHub deployment event
+inputs:
+  action:
+    description: "The action to perfom.  Can be 'create' or 'update'"
+    required: true
+  token:
+    description: "The GitHub token"
+    required: true
+  ref:
+    description: "The ref to deploy -- Required for 'create' action"
+  environment:
+    description: "Name for the target deployment environment"
+  description:
+    description: "Short description of the deployment"
+  transient:
+    description: "Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future."
+  interactive:
+    description: "Specifies if the given environment is one that end-users directly interact with"
+  id:
+    description: "The Deployment ID to update"
+  state:
+    description: "The state of the deployment. Can be one of error, failure, inactive, in_progress, queued pending, or success"
+outputs:
+  id:
+    description: The deployment ID.
+  task:
+    description: The task specified to execute.
+  payload:
+    description: JSON payload with extra information about the deployment.
+  environment:
+    description: Name for the target deployment environment
+  state:
+    description: The state of the deployment
+runs:
+  using: node12
+  main: index.js

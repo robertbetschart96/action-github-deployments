@@ -1,0 +1,13 @@
+{
+  "name": "action-github-deployments",
+  "version": "1.0.0",
+  "description": "An action to create and update GitHub deployments",
+  "repository": "https://github.com/aaronpanch/action-github-deployments.git",
+  "main": "index.js",
+  "author": "Aaron Panchal <aaron.panchal@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/github": "^1.1.0"
+  }
+}
